@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on D3bug Blog</title>
+        <link>http://localhost:1313/posts/</link>
+        <description>Recent content in Posts on D3bug Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Wed, 07 Jan 2026 09:57:52 -0800</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Active Directory</title>
+        <link>http://localhost:1313/posts/active_directory/</link>
+        <pubDate>Wed, 07 Jan 2026 09:57:52 -0800</pubDate>
+        
+        <guid>http://localhost:1313/posts/active_directory/</guid>
+        <description>&lt;h1 id=&#34;avtive-directory&#34;&gt;Avtive Directory
+&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Active_Directory&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Active Directory&lt;/a&gt; is a directory-based identity-related service by Microsoft.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;code test
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;test &lt;span style=&#34;color:#ae81ff&#34;&gt;123&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Testing &lt;strong&gt;Bold&lt;/strong&gt; testing.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,4 @@
+baseURL = 'https://nick-graves.github.io/'
+languageCode = 'en-us'
+title = 'D3bug Blog'
+theme="hugo-theme-stack"
