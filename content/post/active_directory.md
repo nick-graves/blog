@@ -18,7 +18,7 @@ Active Directory is a term that I have encountered a few times. But every time i
 Before I begin I want to familiarize myself with some AD terminology. 
 - **Domain Controller (DC)**: The server that is running AD and holds the directory database. 
 - **Domain**: A logical boundary that contains objects such as users, computers, and groups, and provides centralized authentication and authorization.
-- **Tree**: A collection of domains with contiguous namespace (sales.corp.com & engineering.corp.com)
+- **Tree**: A collection of domains with contiguous namespace (sales.corp.com & engineering.corp.com).
     - Namespace refers to the "corp" in that domain. Both sales and engineering both share the same namespace
 - **Forest**: A collection of one or more trees
 - **Organization Unit (OU)**: A container within a domain that organizes users computers or other OUs. 
