@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Avtive Directory\rActive Directory is a directory-based identity-related service by Microsoft.\ncode test test 123 Testing Bold testing.\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Active Directory\rWikipedia\rActive Directory (AD) is a directory service developed by Microsoft for Windows domain networks. Windows Server operating systems include it as a set of processes and services.[1][2] Originally, only centralized domain management used Active Directory. However, it ultimately became an umbrella title for various directory-based identity-related services.[3]\nChatGPT\rActive Directory (AD) is a centralized directory and identity management system used in Windows-based networks. It allows organizations to manage users, computers, permissions, and security policies from one place.\n">
 <title>Active Directory</title>
 
 <link rel='canonical' href='http://localhost:1313/post/active_directory/'>
 
 <link rel="stylesheet" href="/scss/style.min.b9e9128fec450ebccecc4ec9900157f32b85d0609bcd5ee3293968bcaa1235f2.css"><meta property='og:title' content="Active Directory">
-<meta property='og:description' content="Avtive Directory\rActive Directory is a directory-based identity-related service by Microsoft.\ncode test test 123 Testing Bold testing.\n">
+<meta property='og:description' content="Active Directory\rWikipedia\rActive Directory (AD) is a directory service developed by Microsoft for Windows domain networks. Windows Server operating systems include it as a set of processes and services.[1][2] Originally, only centralized domain management used Active Directory. However, it ultimately became an umbrella title for various directory-based identity-related services.[3]\nChatGPT\rActive Directory (AD) is a centralized directory and identity management system used in Windows-based networks. It allows organizations to manage users, computers, permissions, and security policies from one place.\n">
 <meta property='og:url' content='http://localhost:1313/post/active_directory/'>
 <meta property='og:site_name' content='D3bug Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-01-07T09:57:52-08:00'/><meta property='article:modified_time' content='2026-01-07T09:57:52-08:00'/>
 <meta name="twitter:title" content="Active Directory">
-<meta name="twitter:description" content="Avtive Directory\rActive Directory is a directory-based identity-related service by Microsoft.\ncode test test 123 Testing Bold testing.\n">
+<meta name="twitter:description" content="Active Directory\rWikipedia\rActive Directory (AD) is a directory service developed by Microsoft for Windows domain networks. Windows Server operating systems include it as a set of processes and services.[1][2] Originally, only centralized domain management used Active Directory. However, it ultimately became an umbrella title for various directory-based identity-related services.[3]\nChatGPT\rActive Directory (AD) is a centralized directory and identity management system used in Windows-based networks. It allows organizations to manage users, computers, permissions, and security policies from one place.\n">
     </head>
     <body class="
     article-page
@@ -150,7 +150,7 @@
 
 
                 <time class="article-time--reading">
-                    1 minute read
+                    6 minute read
                 </time>
             </div>
         
@@ -165,12 +165,107 @@
     <section class="article-content">
     
     
-    <h1 id="avtive-directory">Avtive Directory
-</h1><p><a class="link" href="https://en.wikipedia.org/wiki/Active_Directory"  target="_blank" rel="noopener"
-    >Active Directory</a> is a directory-based identity-related service by Microsoft.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>code test
-</span></span><span style="display:flex;"><span>test <span style="color:#ae81ff">123</span>
-</span></span></code></pre></div><p>Testing <strong>Bold</strong> testing.</p>
+    <h1 id="active-directory">Active Directory
+</h1><h2 id="wikipedia">Wikipedia
+</h2><blockquote>
+<p>Active Directory (AD) is a directory service developed by Microsoft for Windows domain networks. Windows Server operating systems include it as a set of processes and services.<!-- raw HTML omitted -->[1][2]<!-- raw HTML omitted --> Originally, only centralized domain management used Active Directory. However, it ultimately became an umbrella title for various directory-based identity-related services.<!-- raw HTML omitted -->[3]<!-- raw HTML omitted --></p>
+</blockquote>
+<h2 id="chatgpt">ChatGPT
+</h2><blockquote>
+<p>Active Directory (AD) is a centralized directory and identity management system used in Windows-based networks. It allows organizations to manage users, computers, permissions, and security policies from one place.</p>
+</blockquote>
+<h2 id="what-does-this-mean">What does this mean?
+</h2><p>Active Directory is a term that I have encountered a few times. But every time it is accompanied by a vague and wide sweeping definition like the ones seen above leaving me with an arms length understanding. So today I am going to attempt to squash my ignorance and implement a very VERY basic AD network. The plan is to create a a few virtual machines to simulate a basic network with AD governing it.</p>
+<h2 id="ad-basics">AD Basics
+</h2><p>Before I begin I want to familiarize myself with some AD terminology.</p>
+<ul>
+<li><strong>Domain Controller (DC)</strong>: The server that is running AD and holds the directory database.</li>
+<li><strong>Domain</strong>: A logical boundary that contains objects such as users, computers, and groups, and provides centralized authentication and authorization.</li>
+<li><strong>Tree</strong>: A collection of domains with contiguous namespace (sales.corp.com &amp; engineering.corp.com).
+<ul>
+<li>Namespace refers to the &ldquo;corp&rdquo; in that domain. Both sales and engineering both share the same namespace</li>
+</ul>
+</li>
+<li><strong>Forest</strong>: A collection of one or more trees</li>
+<li><strong>Organization Unit (OU)</strong>: A container within a domain that organizes users computers or other OUs.</li>
+</ul>
+<h2 id="1-set-up-the-vms">1. Set up the VMs
+</h2><p>I will begin with only two VMs.</p>
+<ol>
+<li><strong>Windows server 2022</strong>: This will be my DC.</li>
+<li><strong>Windows 11</strong>: This will be the workstation.</li>
+</ol>
+<p>VirtualBox by Oracle with be my hypervisor of choice. Setting these up is pretty straight forward. Just downloading the ISOs from the Microsoft website and configuring the system requirements for each system.</p>
+<p>One small &ldquo;gotcha&rdquo; here is ensuring that both VMs are on the same virtual network. Under the &ldquo;network&rdquo; tab of each VM you can configure the network setting for each system. The default is &ldquo;NAT&rdquo;. NAT lets your VM access external networks (like the internet) by sharing the host machine’s IP address. This will not work for us since other machines cannot initiate connection to the VM. We will need to select &ldquo;Internal Network&rdquo;. This creates a private virtual switch inside VirtualBox. This means our devices cannot connect to the outside internet but they can connect to each other.</p>
+<h2 id="2-windows-server-config">2. Windows Server Config
+</h2><p>We begin with the basic set up, language, region, installation type, etc. The key here is the administrator password. This will function as our master password and allow us access into the DC to configure everything else. It has access to just about everything so I kept it very secure by setting it as &ldquo;Adminpass123&rdquo;. Upon reboot we can now login as the administrator. For simplicity sake I renamed this machine to DC01.</p>
+<p>Now it is time to configure the network. The first thing we will do is set up a static IP. But first we must get out network adapter which, in powershell can be done with the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-NetAdapter
+</span></span></code></pre></div><p>Taking note of the name of this adapter, we can now reconfigure. We can rename it to a name of our choosing and also set up our IP address and our subnet mask. In this case I&rsquo;m using <code>192.168.50.10</code> and a subnet mask of the first 24 bits. In laymans terms, this just means all devices on this subnet can only change values after the last &ldquo;.&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>New-NetIPAddress `
+</span></span><span style="display:flex;"><span>  -InterfaceAlias <span style="color:#e6db74">&#34;Ethernet0&#34;</span> `
+</span></span><span style="display:flex;"><span>  -IPAddress <span style="color:#ae81ff">192.168</span>.50.10 `
+</span></span><span style="display:flex;"><span>  -PrefixLength <span style="color:#ae81ff">24</span>
+</span></span></code></pre></div><p>Now we will configure DNS. This is critical for AD. This DC will act as the DNS server for the rest of the network. If we use a basic DNS server like Google&rsquo;s <code>8.8.8.8</code> it will have no way of finding our other devices. Fortunately, this is much easier than I originally thought. All it takes is the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Set-DnsClientServerAddress `
+</span></span><span style="display:flex;"><span>  -InterfaceAlias <span style="color:#e6db74">&#34;Ethernet0&#34;</span> `
+</span></span><span style="display:flex;"><span>  -ServerAddresses <span style="color:#ae81ff">192.168</span>.50.10
+</span></span></code></pre></div><p>Now we must turn this server into the DC. We still don&rsquo;t have Active Directory Domain Services installed. So we will do that with the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Install-WindowsFeature AD-Domain-Services,DNS -IncludeManagementTools
+</span></span></code></pre></div><p>Now we promote our machine to DC. We will do this by creating a new <a class="link" href="##AD-Basics" >forest</a>. Within our forest, our current machine is the DC and the DNS server. Once again, we are forced to reboot. After rebooting we can login back in as the admin and double check everything is working with the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-Service ADWS
+</span></span><span style="display:flex;"><span>Get-Service DNS
+</span></span><span style="display:flex;"><span>Get-ADDomain
+</span></span></code></pre></div><h2 id="3-basic-ad-config">3. Basic AD Config
+</h2><p>Now we will create some basic <a class="link" href="##AD-Basics" >organization units</a>. One for workstations, one for users, and one for groups. That can be done with the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>New-ADOrganizationalUnit -Name <span style="color:#e6db74">&#34;Workstations&#34;</span> -Path <span style="color:#e6db74">&#34;DC=lab,DC=local&#34;</span>
+</span></span><span style="display:flex;"><span>New-ADOrganizationalUnit -Name <span style="color:#e6db74">&#34;Users&#34;</span> -Path <span style="color:#e6db74">&#34;DC=lab,DC=local&#34;</span>
+</span></span><span style="display:flex;"><span>New-ADOrganizationalUnit -Name <span style="color:#e6db74">&#34;Groups&#34;</span> -Path <span style="color:#e6db74">&#34;DC=lab,DC=local&#34;</span>
+</span></span></code></pre></div><p>We can verifying their creation with the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-ADOrganizationalUnit -Filter *
+</span></span></code></pre></div><p>We can now create our first users, lets call her Alice:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>New-ADUser `
+</span></span><span style="display:flex;"><span>  -Name <span style="color:#e6db74">&#34;Alice Johnson&#34;</span> `
+</span></span><span style="display:flex;"><span>  -SamAccountName ajohnson `
+</span></span><span style="display:flex;"><span>  -UserPrincipalName ajohnson@lab.local `
+</span></span><span style="display:flex;"><span>  -Path <span style="color:#e6db74">&#34;OU=Users,DC=lab,DC=local&#34;</span> `
+</span></span><span style="display:flex;"><span>  -AccountPassword (Read-Host -AsSecureString <span style="color:#e6db74">&#34;Password&#34;</span>) `
+</span></span><span style="display:flex;"><span>  -Enabled $true
+</span></span></code></pre></div><p>We can create a group as well:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>New-ADGroup `
+</span></span><span style="display:flex;"><span>  -Name <span style="color:#e6db74">&#34;IT-Admins&#34;</span> `
+</span></span><span style="display:flex;"><span>  -GroupScope Global `
+</span></span><span style="display:flex;"><span>  -GroupCategory Security `
+</span></span><span style="display:flex;"><span>  -Path <span style="color:#e6db74">&#34;OU=Groups,DC=lab,DC=local&#34;</span>
+</span></span></code></pre></div><p>Then we can add lovely Alice to our newly created group:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-ADGroupMember -Identity <span style="color:#e6db74">&#34;IT-Admins&#34;</span> -Members ajohnson
+</span></span></code></pre></div><p>This create simplicity when applying security rules. If we were to get a new IT admin, we wouldn&rsquo;t need to find all of Alice&rsquo;s permission and copy them over to this new user we could simply add them to the already created IT-Admins group and this would be automatically done. This way we don&rsquo;t have to mange users, we can just worry about groups. Similar to the principles of <a class="link" href="https://en.wikipedia.org/wiki/Role-based_access_control"  target="_blank" rel="noopener"
+    >RBAC</a>.</p>
+<h2 id="4-configure-the-client">4. Configure the Client
+</h2><p>At this point, Active Directory is installed, DNS is configured, and basic directory objects exist. The final step is to introduce a client machine and allow it to authenticate against the domain. Computer Objects in Active Directory Unlike users and groups, computer objects do not need to be created manually in most environments. When a Windows machine joins a domain, Active Directory automatically creates a corresponding computer object and establishes a trust relationship between the machine and the domain controller. By default, this computer object is placed in the built-in Computers container. But we will move this into a dedicated Organizational Unit so that policies and configuration can be applied consistently.</p>
+<p>Before joining the domain, the workstation must be able to locate the domain controller. Because Active Directory relies heavily on DNS, the workstation’s DNS server must point to the domain controller, not an external resolver. In the Windows setting we can configure a custom IP address and point to a custom DNS server using these settings:</p>
+<pre tabindex="0"><code>IP Address: 192.168.50.20
+Subnet Mask: 255.255.255.0
+DNS Server: 192.168.50.10
+</code></pre><p>We can test connectivity of the devices using ping:</p>
+<pre tabindex="0"><code>ping 192.168.50.10
+ping dc01
+ping dc01.lab.local
+</code></pre><p>We could now join the domain. In Windows setting we can select out domain as ``lab.local```. We then authenticate with admin credentials and reboot.</p>
+<h2 id="5-move-workstation-or-workstations-ou">5. Move Workstation or Workstations OU
+</h2><p>To move this devices from the default <code>computers</code> container over to the <code>workstations</code> OU we first find the name of the computer with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-ADComputer -Filter *
+</span></span></code></pre></div><p>Then we use that name in the following command to change its OU:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Move-ADObject `
+</span></span><span style="display:flex;"><span>  -Identity <span style="color:#e6db74">&#34;CN=WIN11-CLIENT,CN=Computers,DC=lab,DC=local&#34;</span> `
+</span></span><span style="display:flex;"><span>  -TargetPath <span style="color:#e6db74">&#34;OU=Workstations,DC=lab,DC=local&#34;</span>
+</span></span></code></pre></div><h2 id="6-final-test">6. Final Test
+</h2><p>To test everything is working as expected we can login on the workstation as Alice. At the Windows login screen we enter Alice&rsquo;s credentials and a successful login confirms:</p>
+<ul>
+<li>DNS working</li>
+<li>Workstation trusted the domain</li>
+<li>AD authentication functioned end-to-end</li>
+</ul>
 
 </section>
 
@@ -292,7 +387,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.beb1d951b6ec2d44397ac4467888708adc944ef3b3b5385870c7bebdd62af787.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.71755cc21bc55825b0e176e6d7bbb8bf962a0b500a78f709a5c4d7bfc745965c.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

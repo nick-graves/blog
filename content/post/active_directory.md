@@ -127,7 +127,7 @@ ping dc01.lab.local
 We could now join the domain. In Windows setting we can select out domain as ``lab.local```. We then authenticate with admin credentials and reboot. 
 
 
-## 5. Move Workstation or Workstations OU
+## 5. Move Workstation to Workstations OU
 To move this devices from the default ```computers``` container over to the ```workstations``` OU we first find the name of the computer with:
 ```powershell
 Get-ADComputer -Filter *
