@@ -2,7 +2,7 @@
 title: "About Me"
 ---
 
-I’m Nick.
+Hello. I’m Nick.
 
 I'm a recent graduate who is interested in cybersecurity and the business world. I have a background in computer science and an MBA. 
 
