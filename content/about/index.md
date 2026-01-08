@@ -10,6 +10,6 @@ This blog is a place for me to write things out as I’m learning. Some posts ar
 
 I’m not trying to present myself as an expert or build a polished tutorial site. Most of what’s here is me working through ideas, documenting what I’ve learned, and trying to explain things clearly to myself. 
 
-If you’re interested in my background or work, feel free to check out my resume or GitHub, both linked in the sidebar.
+If you’re interested in my background or work, feel free to check out my resume, GitHub, or LinkedIn, linked in the sidebar.
 
 Thanks for reading.

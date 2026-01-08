@@ -121,7 +121,7 @@ ping dc01.lab.local
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/about/</guid>
-        <description>&lt;p&gt;I’m Nick.&lt;/p&gt;
+        <description>&lt;p&gt;Hello. I’m Nick.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;m a recent graduate who is interested in cybersecurity and the business world. I have a background in computer science and an MBA.&lt;/p&gt;
 &lt;p&gt;This blog is a place for me to write things out as I’m learning. Some posts are technical notes on on topics like networking, Active Directory, or security fundamentals. Others might be walkthroughs on LeetCode or Hack The Box challenges. Some might be summaries or thoughts on articles or books.&lt;/p&gt;
 &lt;p&gt;I’m not trying to present myself as an expert or build a polished tutorial site. Most of what’s here is me working through ideas, documenting what I’ve learned, and trying to explain things clearly to myself.&lt;/p&gt;
