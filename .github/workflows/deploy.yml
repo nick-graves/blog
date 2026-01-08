@@ -21,6 +21,13 @@ jobs:
           hugo-version: "latest"
           extended: true
 
+      - name: Show where we are + what Hugo sees
+        run: |
+          pwd
+          ls -la
+          echo "Hugo config files found:"
+          find . -maxdepth 3 -type f \( -name "hugo.toml" -o -name "config.toml" -o -name "config.yaml" -o -name "config.yml" \)
+
       - name: Build
         run: hugo --minify --cleanDestinationDir
 
