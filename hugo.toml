@@ -1,4 +1,80 @@
 baseURL = 'https://nick-graves.github.io/'
 languageCode = 'en-us'
-title = 'D3bug Blog'
+title = 'The D3bug Blog'
 theme="hugo-theme-stack"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+    identifier = "home"
+    [menu.main.params]
+      icon = "home"
+  [[menu.main]]
+    name = "Search"
+    url = "/page/search/"
+    weight = 2
+    identifier = "search"
+    [menu.main.params]
+      icon = "search"
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3
+    identifier = "about"
+    [menu.main.params]
+      icon = "user"
+  [[menu.main]]
+    name = "Resume"
+    url = "/resume/resume.pdf"
+    weight = 4
+    identifier = "resume"
+    [menu.main.params]
+        icon = "file"
+
+
+  [[menu.social]]
+    identifier = "github"
+    name = "GitHub"
+    url = "https://github.com/nick-graves"
+    weight = 1
+    [menu.social.params]
+      icon = "brand-github"
+  [[menu.social]]
+    identifier = "linkedin"
+    name = "LinkedIn"
+    url = "https://linkedin.com/in/nicholas-graves-0a3646234"
+    weight = 2
+    [menu.social.params]
+      icon = "link"
+
+
+[params.sidebar.avatar]
+enabled = true
+local = false
+src = "/images/avatar.jpg"
+
+[params.sidebar]
+subtitle = "For all the things I'm interested in and working on"
+
+
+
+[params.widgets]
+homepage = [
+  { type = "search" },
+  { type = "categories" },
+  { type = "tag-cloud" }
+]
+
+page = [
+  { type = "toc" }
+]
+
+[taxonomies]
+tag = "tags"
+category = "categories"
+
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]

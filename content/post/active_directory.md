@@ -1,6 +1,10 @@
 +++
 date = '2026-01-07T09:57:52-08:00'
-title = 'Active Directory'
+title = 'Active Directory Lab'
+
+image = "/post/images/active_directory.jpg"
+tags = ["active-directory", "windows"]
+categories = ["identity"]
 +++
 
 # Active Directory

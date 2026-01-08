@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>D3bug Blog</title>
+        <title>The D3bug Blog</title>
         <link>http://localhost:1313/</link>
-        <description>Recent content on D3bug Blog</description>
+        <description>Recent content on The D3bug Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <lastBuildDate>Wed, 07 Jan 2026 09:57:52 -0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Active Directory</title>
+        <title>Active Directory Lab</title>
         <link>http://localhost:1313/post/active_directory/</link>
         <pubDate>Wed, 07 Jan 2026 09:57:52 -0800</pubDate>
         
         <guid>http://localhost:1313/post/active_directory/</guid>
-        <description>&lt;h1 id=&#34;active-directory&#34;&gt;Active Directory
+        <description>&lt;img src="http://localhost:1313/post/images/active_directory.jpg" alt="Featured image of post Active Directory Lab" /&gt;&lt;h1 id=&#34;active-directory&#34;&gt;Active Directory
 &lt;/h1&gt;&lt;h2 id=&#34;wikipedia&#34;&gt;Wikipedia
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;Active Directory (AD) is a directory service developed by Microsoft for Windows domain networks. Windows Server operating systems include it as a set of processes and services.&lt;!-- raw HTML omitted --&gt;[1][2]&lt;!-- raw HTML omitted --&gt; Originally, only centralized domain management used Active Directory. However, it ultimately became an umbrella title for various directory-based identity-related services.&lt;!-- raw HTML omitted --&gt;[3]&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
@@ -99,7 +99,7 @@ DNS Server: 192.168.50.10
 ping dc01
 ping dc01.lab.local
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We could now join the domain. In Windows setting we can select out domain as ``lab.local```. We then authenticate with admin credentials and reboot.&lt;/p&gt;
-&lt;h2 id=&#34;5-move-workstation-or-workstations-ou&#34;&gt;5. Move Workstation or Workstations OU
+&lt;h2 id=&#34;5-move-workstation-to-workstations-ou&#34;&gt;5. Move Workstation to Workstations OU
 &lt;/h2&gt;&lt;p&gt;To move this devices from the default &lt;code&gt;computers&lt;/code&gt; container over to the &lt;code&gt;workstations&lt;/code&gt; OU we first find the name of the computer with:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Get-ADComputer -Filter *
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then we use that name in the following command to change its OU:&lt;/p&gt;
@@ -114,6 +114,28 @@ ping dc01.lab.local
 &lt;li&gt;AD authentication functioned end-to-end&lt;/li&gt;
 &lt;/ul&gt;
 </description>
+        </item>
+        <item>
+        <title>About Me</title>
+        <link>http://localhost:1313/about/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/about/</guid>
+        <description>&lt;p&gt;I’m Nick.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m a recent graduate who is interested in cybersecurity and the business world. I have a background in computer science and an MBA.&lt;/p&gt;
+&lt;p&gt;This blog is a place for me to write things out as I’m learning. Some posts are technical notes on on topics like networking, Active Directory, or security fundamentals. Others might be walkthroughs on LeetCode or Hack The Box challenges. Some might be summaries or thoughts on articles or books.&lt;/p&gt;
+&lt;p&gt;I’m not trying to present myself as an expert or build a polished tutorial site. Most of what’s here is me working through ideas, documenting what I’ve learned, and trying to explain things clearly to myself.&lt;/p&gt;
+&lt;p&gt;If you’re interested in my background or work, feel free to check out my resume or GitHub, both linked in the sidebar.&lt;/p&gt;
+&lt;p&gt;Thanks for reading.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Search</title>
+        <link>http://localhost:1313/page/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/page/search/</guid>
+        <description></description>
         </item>
         
     </channel>
