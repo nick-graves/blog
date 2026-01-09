@@ -3,7 +3,7 @@ date = '2026-01-07T09:57:52-08:00'
 title = 'Active Directory Lab'
 
 image = "/post/images/active_directory.jpg"
-tags = ["active-directory", "windows"]
+tags = ["active-directory", "windows", "Security"]
 categories = ["identity"]
 +++
 
