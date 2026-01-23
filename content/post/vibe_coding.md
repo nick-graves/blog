@@ -78,12 +78,12 @@ One of the most effective setups I used was a **multi-agent workflow** built aro
 
 I split work across three sub-agents, each focused on a specific area like frontend changes, backend logic, or AI-related code. Each agent worked on its own branch and handled a narrow set of tasks instead of touching everything at once.
 
-On top of that, I had a supervising agent whose job was to review changes, approve merges, or push back with feedback. That agent didn’t write much code itself — it mostly acted as a reviewer.
+On top of that, I had a supervising agent whose job was to review changes, approve merges, or push back with feedback. That agent didn’t write much code itself it mostly acted as a reviewer.
 
 This structure mattered more than I expected. It reduced chaos, made mistakes easier to undo, and prevented the codebase from drifting in random directions. It felt a lot closer to managing a small team than “vibe coding” in the usual sense.
 
 
-## 7. claude.md Files (And Borrowing from Others)
+## 7. CLAUDE.md Files (And Borrowing from Others)
 
 The thing that made this setup work was `CLAUDE.md`.
 
@@ -117,6 +117,8 @@ That constraint made a huge difference. The UI didn’t magically become perfect
 ![Alt text](/post/images/new_ui5_redacted.png)
 ![Alt text](/post/images/new_ui6_redacted.png)
 ![Alt text](/post/images/new_ui7.png)
+
+NOTE: Some features were added after the `/frontend-design` UI update.
 
 
 ## 9. The Token Problem (It Adds Up Fast)
