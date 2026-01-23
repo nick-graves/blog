@@ -4,7 +4,7 @@ title = 'Active Directory Lab'
 
 image = "/post/images/active_directory.jpg"
 tags = ["active-directory", "windows", "Security"]
-categories = ["identity"]
+categories = ["Security"]
 +++
 
 # Active Directory

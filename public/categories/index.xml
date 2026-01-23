@@ -6,10 +6,26 @@
         <description>Recent content in Categories on The D3bug Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 07 Jan 2026 09:57:52 -0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 23 Jan 2026 13:37:29 -0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Project</title>
+        <link>http://localhost:1313/categories/project/</link>
+        <pubDate>Fri, 23 Jan 2026 13:37:29 -0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/project/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Security</title>
+        <link>http://localhost:1313/categories/security/</link>
+        <pubDate>Wed, 07 Jan 2026 09:57:52 -0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/security/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Identity</title>
         <link>http://localhost:1313/categories/identity/</link>
-        <pubDate>Wed, 07 Jan 2026 09:57:52 -0800</pubDate>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/categories/identity/</guid>
         <description></description>
