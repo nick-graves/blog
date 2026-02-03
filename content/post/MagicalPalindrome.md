@@ -1,6 +1,7 @@
 +++
 date = '2026-01-29T09:26:13-08:00'
 title = 'HTB: Magical Palindrome'
+draft = true
 
 image = "/post/images/MagicalPalindrome.jpg"
 tags = ["CTF", "HTB", "Web"]
